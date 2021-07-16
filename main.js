@@ -53,7 +53,7 @@ function Validator(options) {
 // 1. Khi có lỗi thì trả ra message lỗi
 // 2. Khi hợp lệ ==> không trả về gì cả
 // rule username
-Validator.isRequired = function(selector) {
+Validator.isRequired = function(selector, message) {
     return {
         selector: selector,
         test: function(value) {
@@ -63,7 +63,7 @@ Validator.isRequired = function(selector) {
     }
 }
 // Rule email
-Validator.isEmail = function(selector) {
+Validator.isEmail = function(selector, message) {
     return {
         selector: selector,
         test: function(value) {
@@ -73,7 +73,7 @@ Validator.isEmail = function(selector) {
     }
 }
 // rule nhập mật khẩu
-Validator.minLength = function(selector, min) {
+Validator.minLength = function(selector, min, message) {
     return {
         selector: selector,
         test: function(value) {
